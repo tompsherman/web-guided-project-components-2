@@ -17,21 +17,24 @@
 //    * With JS using the native fetch
 
 console.log('about to request')
+debugger
 fetch('https://lambda-times-api.herokuapp.com/friends')
   .then(response => {
     console.log('about to parse the response body')
+    debugger
     return response.json()
   })
   .then(parsedResponse => {
     console.log('the parsed body is here:')
     console.log(parsedResponse)
+    debugger
   })
   .catch(error => {
     console.log('argh, something went wrong')
     debugger
   })
 console.log('finished requesting')
-
+debugger
 
 
 // 👉 TASK 2- Select the "entry point", the element
