@@ -20,7 +20,7 @@ console.log('about to request')
 fetch('https://lambda-times-api.herokuapp.com/friends')
   .then(response => {
     console.log('about to parse the response body')
-    return response.json()
+    return response.json() // returns another promise (same as fetch itself)
   })
   .then(parsedResponse => {
     console.log('the parsed body is here:')
@@ -79,6 +79,19 @@ function dogCardMaker({ imageURL, breed }) {
 //    * ON SUCCESS: use the data to create dogCards and append them to the entry point
 //    * ON FAILURE: log the error to the console
 //    * IN ANY CASE: log "done" to the console
+axios.get('https://dog.ceo/api/breed/mastiff/images/random/6')
+  // the response body is put by Axios into a 'data' property of the resolved thing
+  .then(thing => {
+    debugger
+    // the data we want is available HERE, not outside of this callback
+    // DOM SURGERY THAT USES THE RESOLVED DATA NEEDS TO GO HERE
+    thing.data.
+  })
+  .catch(error => {
+    debugger
+  })
+// the data is NOT availalble in this region of the program
+
 
 
 // 👉 (OPTIONAL) TASK 6- Wrap the fetching operation inside a function `getDogs`
