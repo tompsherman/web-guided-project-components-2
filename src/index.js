@@ -75,7 +75,7 @@ function dogCardMaker({ imageURL, breed }) {
 //     debugger
 //   })
 
-// 👉 TASK 5- Fetch dogs from `https://dog.ceo/api/breed/{breed}/images/random/{number}`
+// 👉 TASK 5- Fetch dogs from `https://dog.ceo/api/breed/mastiff/images/random/6`
 //    * ON SUCCESS: use the data to create dogCards and append them to the entry point
 //    * ON FAILURE: log the error to the console
 //    * IN ANY CASE: log "done" to the console
