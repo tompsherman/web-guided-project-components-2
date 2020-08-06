@@ -16,16 +16,21 @@
 //    * With Chrome
 //    * With JS using the native fetch
 
+console.log('about to request')
 fetch('https://lambda-times-api.herokuapp.com/friends')
   .then(response => {
+    console.log('about to parse the response body')
     return response.json()
   })
   .then(parsedResponse => {
-    debugger
+    console.log('the parsed body is here:')
+    console.log(parsedResponse)
   })
   .catch(error => {
+    console.log('argh, something went wrong')
     debugger
   })
+console.log('finished requesting')
 
 
 
