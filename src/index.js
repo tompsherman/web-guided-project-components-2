@@ -18,7 +18,7 @@
 
 fetch('https://lambda-times-api.herokuapp.com/friends')
   .then(response => {
-    return responZe.json()
+    return response.json()
   })
   .then(parsedResponse => {
     debugger
