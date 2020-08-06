@@ -81,11 +81,14 @@ function dogCardMaker({ imageURL, breed }) {
 //    * IN ANY CASE: log "done" to the console
 axios.get('https://dog.ceo/api/breed/mastiff/images/random/6')
   // the response body is put by Axios into a 'data' property of the resolved thing
-  .then(thing => {
-    debugger
+  .then(function successHandler(response) {
     // the data we want is available HERE, not outside of this callback
     // DOM SURGERY THAT USES THE RESOLVED DATA NEEDS TO GO HERE
-    thing.data.
+    const arrayOfImageURLs = response.data.message
+    arrayOfImageURLs.forEach(imageURL => {
+      const card = dogCardMaker({ imageURL: imageURL, breed: 'mastiff' })
+      entryPoint.appendChild(card)
+    })
   })
   .catch(error => {
     debugger
