@@ -16,6 +16,15 @@
 //    * With Chrome
 //    * With JS using the native fetch
 
+fetch('https://lambda-times-api.herokuapp.com/friends')
+  .then(response => {
+    return response.json()
+  })
+  .then(parsedResponse => {
+    debugger
+  })
+
+
 
 // 👉 TASK 2- Select the "entry point", the element
 // inside of which we'll inject our dog cards 
